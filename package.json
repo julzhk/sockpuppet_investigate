@@ -1,0 +1,12 @@
+{
+  "name": "godpear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --info-verbosity verbose"
+},
+  "author": "",
+  "license": "ISC"
+}
