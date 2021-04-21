@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from picker.views.picker_reflex import PickerReflexView
+from picker.views.picker_views import PickerIndustryView, AuthorizeView
+from try_vue.views import vue
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', PickerReflexView.as_view(), name='home')
+    path('vue/', vue, name='vue'),
+    path('', PickerIndustryView.as_view(), name='home'),
+    path('authorize/', AuthorizeView.as_view(), name='authorize'),
 ]

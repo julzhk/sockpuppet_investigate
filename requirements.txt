@@ -13,7 +13,11 @@ constantly==15.1.0
 cryptography==3.4.7
 daphne==3.0.2
 Django==3.2
+django-appconf==1.0.4
+django-fsm==2.7.1
+django-fsm-log==2.0.1
 django-sockpuppet==0.5.2
+graphviz==0.16
 hiredis==2.0.0
 hyperlink==21.0.0
 idna==3.1

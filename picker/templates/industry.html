@@ -1,0 +1,79 @@
+{% extends TEMPLATE %}
+{% block content %}
+
+    <a href="#"
+       data-reflex="click->IndustryReflex#increment"
+       data-count="{{ count }}"
+    >Increment </a>
+    <span>{{ count }}</span>
+
+    <br>
+    <a href="#"
+       data-reflex="click->IndustryReflex#reset"
+       data-count="222"
+    >reset </a>
+    \{{ count }} \
+
+    selected: {{ industry }}
+    <div class="ui container">
+        <table class="ui single line table">
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in industry_list %}
+                <tr>
+                    <td class="{% ifequal i industry %}active{% endifequal %}">
+                        <a href="#"
+                           data-reflex="click->IndustryReflex#selected"
+                           data-industry="{{ i }}">
+                            {{ i }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if companies %}
+        <div class="ui container">
+            <table class="ui single line table">
+                <thead>
+                <tr>
+                    <th>{{ industry }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for company in companies %}
+                    <tr>
+                        <td>
+                            <a href="#"
+                               data-reflex="click->IndustryReflex#company"
+                               data-company="{{ company }}"
+                            >
+                                {{ company }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        Select industry
+    {% endif %}
+
+    {{ selected_companies }}
+    <a href="#"
+       data-reflex="click->IndustryReflex#reset"
+       data-count="222"
+    >reset </a>
+    <hr>
+    <a href="{% url 'authorize' %}"
+       data-reflex="click">
+        cContinue</a>
+
+{% endblock %}

@@ -47,6 +47,7 @@ ASGI_APPLICATION = 'sockpuppet.routing.application'
 
 INSTALLED_APPS = [
     'picker',
+    'try_vue',
     'channels',
     'sockpuppet',
     'django.contrib.admin',
